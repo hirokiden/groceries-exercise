@@ -87,15 +87,21 @@ for i in sorted_product_name:
     if i["department"] not in departments:
         departments.append(i["department"])    
 
-print(departments)
+    # alternative --> convert into set to remove duplicates
+        # unique_deapartments = list(set(departments))
 
-department_count = len(departments)
+sorted_departments = sorted(departments)
+
+department_count = len(sorted_departments)
 
 print("--------------")
 print("THERE ARE" + " " + str(department_count) + " " + "DEPARTMENT(S):")
 print("--------------")
 
-
+for d in sorted_departments:
+    match_product = [i for i in sorted_product_name if i["department"] == d]
+    match_product_count = len(match_product)
+    print (d.title() + " " + str(match_product_count) + " " + "Product(s)")
 
 
 
