@@ -55,11 +55,22 @@ print("--------------")
 # products[0]["name"] --> this will print out the name of the first product
 
 
-for i in products:
+def sort_by_name(any_product):
+    return any_product["name"]
+
+
+sorted_product_name = sorted(products, key=sort_by_name)
+
+
+
+for i in sorted_product_name:
     products_name = i["name"]
     products_price = "{0:.2f}".format(i["price"])
 
     print("+" + " " + str(products_name) + " " + "($" + str(products_price) + ")")
+
+
+
 
 
 # ###### DESIRED OUTPUT BELOW ########
