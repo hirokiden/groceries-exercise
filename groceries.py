@@ -54,7 +54,7 @@ print("--------------")
 
 ######## products[0]["name"] --> this will print out the name of the first product
 
-######### you need to define a function that will sort the dictionary product names
+######## you need to define a function that will sort the dictionary product names
 
 
 def sort_by_name(any_product):
@@ -63,7 +63,7 @@ def sort_by_name(any_product):
 
 sorted_product_name = sorted(products, key=sort_by_name)
 
-# #######for function is good for loops, you pass into the function 'sorted_product_name'
+#########for function is good for loops, you pass into the function 'sorted_product_name'
 
 
 
@@ -95,17 +95,24 @@ sorted_departments = sorted(departments)
 department_count = len(sorted_departments)
 
 print("--------------")
-print("THERE ARE" + " " + str(department_count) + " " + "DEPARTMENT(S):")
+print("THERE ARE" + " " + str(department_count) + " " + "DEPARTMENTS:")
 print("--------------")
 
 for d in sorted_departments:
     match_product = [i for i in sorted_product_name if i["department"] == d]
     match_product_count = len(match_product)
-    print (d.title() + " " + str(match_product_count) + " " + "Product(s)")
+    
+    if match_product_count > 1:
+        label = "Products"
+    else:
+        label = "Product"
+
+    print ("+" +" " + d.title() + " " + "(" + str(match_product_count) + " " + str(label) + ")")
 
 
 
 # ###### DESIRED OUTPUT BELOW ########
+
 # --------------
 # THERE ARE 20 PRODUCTS:
 # --------------
@@ -129,3 +136,16 @@ for d in sorted_departments:
 #  + Saline Nasal Mist ($16.00)
 #  + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce ($6.99)
 #  + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
+# --------------
+# THERE ARE 10 DEPARTMENTS:
+# --------------
+#  + Babies (1 product)
+#  + Beverages (5 products)
+#  + Dairy Eggs (1 product)
+#  + Dry Goods Pasta (1 product)
+#  + Frozen (4 products)
+#  + Household (1 product)
+#  + Meat Seafood (1 product)
+#  + Pantry (2 products)
+#  + Personal Care (2 products)
+#  + Snacks (2 products)
