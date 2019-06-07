@@ -45,14 +45,16 @@ products = [
 
 products_count = len(products)
 
-# print(type(products)) --> Determine what class/category products is, in which case is a list
+######## print(type(products)) --> Determine what class/category products is, in which case is a list
 
 print("--------------")
 print("THERE ARE" + " " + str(products_count) + " " + "PRODUCTS:")
 print("--------------")
 
 
-# products[0]["name"] --> this will print out the name of the first product
+######## products[0]["name"] --> this will print out the name of the first product
+
+######### you need to define a function that will sort the dictionary product names
 
 
 def sort_by_name(any_product):
@@ -61,6 +63,8 @@ def sort_by_name(any_product):
 
 sorted_product_name = sorted(products, key=sort_by_name)
 
+# #######for function is good for loops, you pass into the function 'sorted_product_name'
+
 
 
 for i in sorted_product_name:
@@ -68,6 +72,28 @@ for i in sorted_product_name:
     products_price = "{0:.2f}".format(i["price"])
 
     print("+" + " " + str(products_name) + " " + "($" + str(products_price) + ")")
+
+
+
+
+
+######### DEPARTMENTS SECTION ############
+
+
+departments = []
+
+for i in sorted_product_name:
+    # print(i["department"])
+    if i["department"] not in departments:
+        departments.append(i["department"])    
+
+print(departments)
+
+department_count = len(departments)
+
+print("--------------")
+print("THERE ARE" + " " + str(department_count) + " " + "DEPARTMENT(S):")
+print("--------------")
 
 
 
