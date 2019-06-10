@@ -77,7 +77,7 @@ for i in sorted_product_name:
 
 
 
-######### DEPARTMENTS SECTION ############
+######### DEPARTMENTS SECTION #############
 
 
 departments = []
